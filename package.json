@@ -1,0 +1,25 @@
+{
+  "name": "markdown-blog",
+  "version": "*",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dompurify": "*",
+    "ejs": "*",
+    "express": "*",
+    "jsdom": "*",
+    "marked": "^4.0.15",
+    "method-override": "*",
+    "mongoose": "*",
+    "slugify": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  }
+}
