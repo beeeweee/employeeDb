@@ -25,7 +25,7 @@ router.get('/salary', async (req, res) => {
     ])
   console.log(employee)
   
-  res.render('/', { employee: employee })
+  res.render('/salary', { employee: employee })
 })
 
 //shows employee by ID
@@ -70,26 +70,26 @@ function saveEmployeeAndRedirect(path) {
   }
 }
 
-function sumAllSalarys(path) {
-  return async (req, res) => {
-    let employee = req.employee
-    console.log(employee)
-    let sumOfAllSalarys = 0;
-    employees.forEach(employee => {
-      sumOfAllSalarys = employee.salary+sumOfAllSalarys
-    })
-    employee.salary = req.body.salary
-    if(employee.directory === null){
-      employee.directory = 'None'
-    }
-    try {
-      employee = await employee.save()
-      res.render(`/', ${sumOfAllSalarys}`)
-    } catch (e) {
-      res.render(`/`, { employee: employee })
-    }
-  }
-}
+// function sumAllSalarys(path) {
+//   return async (req, res) => {
+//     let employee = req.employee
+//     console.log(employee)
+//     let sumOfAllSalarys = 0;
+//     employees.forEach(employee => {
+//       sumOfAllSalarys = employee.salary+sumOfAllSalarys
+//     })
+//     employee.salary = req.body.salary
+//     if(employee.directory === null){
+//       employee.directory = 'None'
+//     }
+//     try {
+//       employee = await employee.save()
+//       res.render(`/', ${sumOfAllSalarys}`)
+//     } catch (e) {
+//       res.render(`/`, { employee: employee })
+//     }
+//   }
+// }
 
 //whenever you require this file, you can read it
 module.exports = router
